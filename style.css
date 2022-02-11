@@ -14,6 +14,7 @@
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
+  --color-logo-green: #77b255;
 
   /* Font size */
   --font-large: 48px;
@@ -26,6 +27,30 @@
   --weight-bold: 700;
   --weight-semi-bold: 600;
   --weight-regular: 400;
+
+  /* Size */
+  --size-border-radius: 4px;
+}
+
+/* Universal tags */
+*{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  cursor: default;
+}
+
+a{
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+ul{
+  list-style: none;  
+  padding-left: 0;
 }
 
 /* Typography */
@@ -58,7 +83,42 @@ p {
   margin: 4px 0;
 }
 
-/* Universal tags */
-*{
-  box-sizing: border-box;
+.home__avatar{
+  width: 250px;
+}
+
+#navbar{
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-dark-grey);
+  align-items: center;
+  padding: 16px;
+}
+
+.navbar__menu{
+  display: flex;
+}
+
+.navbar__logo{
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
+}
+.navbar__logo__img{
+  width: 20px;
+}
+
+.navbar__menu__item{
+  padding: 8px 12px;
+  margin: 0 4px;
+  color: var(--color-white);
+  cursor: pointer;
+  border-radius: var(--size-border-radius);
+}
+
+.navbar__menu__item.active{
+  border: 1px solid var(--color-white);  
+}
+
+.navbar__menu__item:hover{
+  background-color: var(--color-logo-green);  
 }
