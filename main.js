@@ -4,8 +4,6 @@
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
-  console.log(window.scrollY);
-  console.log(navbarHeight);
   if (window.scrollY > navbarHeight) {
     navbar.classList.add('navbar--dark');
   } else {
@@ -29,8 +27,21 @@ function movetoScroll(event) {
   if (link == null) {
     return;
   }
-  console.log(scrollTo);
   scrollTo.scrollIntoView({
     behavior: "smooth"
   });
 }
+
+//Make home opacity when scroll
+const homeContainer = document.querySelector('.home__container');
+
+document.addEventListener('scroll', () => {
+  const opacityValue = 1 / (window.scrollY / 200);
+  console.log(opacityValue);
+  homeContainer.style.opacity = opacityValue;
+
+  console.log(window.scrollY);
+  // if (window.scrollY > navbarHeight) {
+
+  // }
+});
