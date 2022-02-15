@@ -20,8 +20,9 @@
   <!-- Navnar -->
   <nav id="navbar">
     <div class="navbar__logo">
-      <img src="./Images/favicon.png" alt="logo" class="navbar__logo__img">
-      <a href="#">BBYIK-K</a>
+      <img src="./Images/favicon.png" alt="logo" class="navbar__logo__img" data-link="#home">
+      <!-- <a href="#">BBYIK-K</a> -->
+      <p class="navbar__logo__title" data-link="#home">BBYIK-K</p>
     </div>
     <ul class="navbar__menu">
       <li class="navbar__menu__item active" data-link="#home">Home</li>
@@ -291,6 +292,7 @@
       </div>
     </div>
   </section>
+
   <!-- Contact -->
   <section id="contact" class="section">
     <h1 class="contact__title">Let's talk</h1>
@@ -305,6 +307,9 @@
     </div>
     <p class="contact__rights">2022 bbyik portfolio - All rights reserved</p>
   </section>
+
+  <!-- Arrow up -->
+  <button class="arrowup"><i class="fa-solid fa-circle-arrow-up" data-link="#home"></i></button>
 </body>
 
 </html>

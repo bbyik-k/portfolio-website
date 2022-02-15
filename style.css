@@ -119,6 +119,24 @@ p {
 .navbar__logo {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
+  cursor: pointer;
+}
+
+.navbar__logo:hover{  
+  animation: wave ease-in-out 1s infinite alternate;  
+}
+
+.navbar__logo__title{
+  text-decoration: none;
+  color: var(--color-white);
+  font-size: inherit;
+  font-weight: inherit;
+  display: inline-block;
+}
+
+@keyframes wave {
+  0% { transform: rotate(3deg); }
+  100% { transform: rotate(-3deg); }
 }
 
 .navbar__logo__img {
@@ -131,6 +149,7 @@ p {
   color: var(--color-white);
   cursor: pointer;
   border-radius: var(--size-border-radius);
+  transition: all 150ms ease-in;
 }
 
 .navbar__menu__item.active {
@@ -177,6 +196,11 @@ p {
   border: 2px solid var(--color-white);
   border-radius: var(--size-border-radius);
   color: var(--color-white);
+  transition: all var(--animaion-duration) ease-in;
+}
+
+.home__contact:hover{
+  background-color: var(--color-logo-green);
 }
 
 /* Section common */
@@ -490,6 +514,37 @@ p {
   transform: scale(1.1);
   color: var(--color-logo-green);
   transition: all var(--animaion-duration) ease-in;
+}
+
+/* arrowup btn */
+.arrowup{
+  position: fixed;
+  padding: 0;  
+  right: 10px;
+  bottom: 50px;
+  font-size: var(--font-large);
+  color: var(--color-dark-grey);  
+  pointer-events: none;
+  
+}
+
+.arrowup i{
+  opacity: 0;  
+  border-radius: 50%;
+  transition: all var(--animaion-duration) ease-in;  
+}
+
+
+
+.arrowup.visible i{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.arrowup i:active{
+  opacity: 0;  
+  border-radius: 50%;
+  transition: all var(--animaion-duration) ease-in;  
 }
 
 /* For below 768px screen width */
