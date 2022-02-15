@@ -1,15 +1,23 @@
 'use strict';
 
+//Set initialize
+function init() {
+  changeNavColor();
+}
+
 // Make navbar transparent when it is on the top
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
-document.addEventListener('scroll', () => {
+document.addEventListener('scroll', () => changeNavColor());
+
+
+function changeNavColor() {
   if (window.scrollY > navbarHeight) {
     navbar.classList.add('navbar--dark');
   } else {
     navbar.classList.remove('navbar--dark');
   }
-});
+}
 
 //Handle scrolling when tapping on the navbar menu
 const navbarMenu = document.querySelector('.navbar__menu');
@@ -40,13 +48,7 @@ function movetoScroll(event) {
 const homeContainer = document.querySelector('.home__container');
 document.addEventListener('scroll', () => {
   const opacityValue = 1 / (window.scrollY / 200);
-  console.log(opacityValue);
   homeContainer.style.opacity = opacityValue;
-
-  console.log(window.scrollY);
-  // if (window.scrollY > navbarHeight) {
-
-  // }
 });
 
 
@@ -59,6 +61,35 @@ document.addEventListener('scroll', () => {
   } else {
     arrowUpBtn.classList.remove('visible');
   }
+});
+
+// Projects
+const workBtnContainer = document.querySelector('.work_categories');
+const projectContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+workBtnContainer.addEventListener('click', (e) => {
+  const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+  if (filter == null) {
+    return;
+  }
+  const active = document.querySelector('.category__btn.active');
+  active.classList.remove('active');
+  const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+  target.classList.add('active');
+
+
+  projectContainer.classList.add('anim-out');
+  setTimeout(_ => {
+    projects.forEach((project) => {
+      if (filter === "*" || filter === project.dataset.type) {
+        project.classList.remove('invisible');
+      } else {
+        project.classList.add('invisible');
+      }
+    });
+    projectContainer.classList.remove('anim-out');
+  }, 300);
+
 });
 
 //Handle scrolling when tapping on the nav logo

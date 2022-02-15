@@ -148,6 +148,7 @@ p {
   margin: 0 4px;
   color: var(--color-white);
   cursor: pointer;
+  border: 1px solid transparent;
   border-radius: var(--size-border-radius);
   transition: all 150ms ease-in;
 }
@@ -158,6 +159,7 @@ p {
 
 .navbar__menu__item:hover {
   background-color: var(--color-logo-green);
+  border: 1px solid var(--color-white);
 }
 
 .navbar__toggle-btn{
@@ -393,6 +395,14 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  opacity: 1;
+  transition: all var(--animaion-duration) ease-out;
+
+}
+
+.work__projects.anim-out{
+  opacity: 0;
+  transform: scale(0.96) translateY(20px);
 }
 
 .project{
@@ -405,6 +415,10 @@ p {
   margin: 2px;
   background-color: var(--color-light-white);
   
+}
+
+.project.invisible{
+  display: none;
 }
 
 .project:hover .project__description{
