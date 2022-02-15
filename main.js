@@ -13,6 +13,7 @@ document.addEventListener('scroll', () => changeNavColor());
 
 function changeNavColor() {
   navbarMenu.classList.remove('open');
+  navbar.classList.remove('open');
   if (window.scrollY > navbarHeight) {
     navbar.classList.add('navbar--dark');
   } else {
@@ -29,6 +30,7 @@ const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
 navbarToggleBtn.addEventListener('click', () => {
   console.log(`click!`)
   navbarMenu.classList.toggle('open');
+  navbar.classList.toggle('open');
 });
 
 //Handle scrolling when tapping on the Contact me btn
