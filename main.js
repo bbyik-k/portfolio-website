@@ -22,19 +22,22 @@ contactBtn.addEventListener('click', (event) => movetoScroll(event));
 // movetoScroll func
 function movetoScroll(event) {
   const target = event.target;
+  console.log(`movetoScroll target: ${target}`);
   const link = target.dataset.link;
+  console.log(`movetoScroll link: ${link}`);
   const scrollTo = document.querySelector(link);
   if (link == null) {
     return;
   }
+
   scrollTo.scrollIntoView({
     behavior: "smooth"
   });
+
 }
 
 //Make home opacity when scroll
 const homeContainer = document.querySelector('.home__container');
-
 document.addEventListener('scroll', () => {
   const opacityValue = 1 / (window.scrollY / 200);
   console.log(opacityValue);
@@ -45,3 +48,19 @@ document.addEventListener('scroll', () => {
 
   // }
 });
+
+
+// Show "arrow up" button when scrolling down
+const arrowUpBtn = document.querySelector('.arrowup');
+arrowUpBtn.addEventListener('click', (event) => movetoScroll(event));
+document.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    arrowUpBtn.classList.add('visible');
+  } else {
+    arrowUpBtn.classList.remove('visible');
+  }
+});
+
+//Handle scrolling when tapping on the nav logo
+const navLogo = document.querySelector('.navbar__logo');
+navLogo.addEventListener('click', (event) => movetoScroll(event));
