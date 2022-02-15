@@ -124,7 +124,7 @@ p {
 }
 
 .navbar__logo:hover{  
-  animation: wave ease-in-out 1s infinite alternate;  
+  animation: wave ease-in-out 1s infinite alternate;
 }
 
 .navbar__logo__title{
@@ -598,7 +598,7 @@ p {
   
   .navbar__menu.open{
     /* display: block; */
-    opacity: 1;
+    animation: shownav ease-out 1s forwards;
     transform: translateY(0px);
   }
 
@@ -628,6 +628,7 @@ p {
 }
 
 @keyframes shownav {
-  /* 0% { transform: rotate(3deg); }
-  100% { transform: rotate(-3deg); } */
+  0% { opacity: 0;}  
+  20% { opacity: 0;}
+  100% { opacity: 1;}
 }
