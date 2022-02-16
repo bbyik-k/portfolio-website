@@ -4,6 +4,13 @@
 Create a portfolio-website with Ellie
 ```
 
+- 강좌 분량
+  - 316분 (5시간 16분)
+  - 홈페이지 권장 완강 기간: 2~3주
+- 프로젝트 개발 기간
+  - 2022.02.05~2022.02.16
+  - 12일 소요 (1.5주)
+
 ## Learning note
 
 ### HTML
